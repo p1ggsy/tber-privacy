@@ -1,0 +1,120 @@
+# ============================================================
+#  Конфіг реклами (Brainrots) — формат: ключ=значення
+# ============================================================
+#  Правила формату:
+#   - Один параметр на рядок: КЛЮЧ=ЗНАЧЕННЯ
+#   - Рядки, що починаються з '#' або '//' — коментарі (ігноруються)
+#   - Порожні рядки ігноруються
+#   - Регістр ключів НЕ має значення (minsecondsbetweenads = minSecondsBetweenAds)
+#   - Значення enum можна писати назвою (adEnvironment=Production)
+#     або номером (adEnvironment=1) — і те, і те зрозуміє парсер
+#   - Підтримуються лише ключі з цього файлу. Невідомий або некоректний
+#     ключ просто ігнорується — значення з інспектора залишається.
+#
+#  Куди покласти цей файл: у грі адреса береться з поля NetParams.fileURL:
+#    https://raw.githubusercontent.com/p1ggsy/tber-privacy/refs/heads/main/params.txt
+#  Тобто: закомітьте цей файл у репозиторій p1ggsy/tber-privacy
+#  (гілка main, шлях params.txt) — і гра завантажить його при старті.
+#
+#  Згенеровано 14.08.2026 з поточних значень інспектора сцени Playground
+#  (AdManager: oldSystem=0 — нова система, adEnvironment=Production).
+# ============================================================
+
+
+# ---------- АВТО-ТАЙМЕР повноекранної реклами (сек) ----------
+# Через скільки секунд після попереднього показу таймер знову
+# спробує показати рекламу. Випадкове число в діапазоні [min, max].
+minSecondsBetweenAds=20
+maxSecondsBetweenAds=25
+
+# УНІВЕРСАЛЬНИЙ КУЛДАУН: жодна реклама (авто чи ручний виклик)
+# не з'явиться частіше ніж раз на цю кількість секунд.
+ADS_RATE=30
+
+
+# ---------- РЕКЛАМА З НАГОРОДОЮ + інтро-екран ----------
+# Час показу інтро-екрана з кнопкою "Пропустити" перед
+# Rewarded Interstitial (обов'язково за політикою AdMob), сек.
+introScreenSeconds=3
+introRewardText=Watch a short ad to continue!
+introSkipButtonText=Skip
+
+
+# ---------- ТИП авто-реклами (важливо!) ----------
+# Що показує автоматичний таймер:
+#   RewardedInterstitial — з нагородою, з'являється інтро-екран "Пропустити"
+#   PlainInterstitial    — просто міжсторінкова, показується одразу, без екрана
+#   Mixed                — випадково між двома типами (шанс нагороди нижче)
+interstitialMode=Mixed
+mixedRewardedChancePercent=50
+
+
+# ---------- РЕКЛАМА ЗАВАНТАЖЕННЯ (App Open) ----------
+# Показувати при холодному старті гри / при поверненні з фонового режиму?
+showAppOpenOnColdStart=true
+showAppOpenOnResume=true
+
+# Скільки секунд чекаємо завантаження App Open при старті
+# (якщо не встиг — гра просто продовжується без реклами).
+appOpenLoadTimeoutSeconds=5
+
+# Мінімальний інтервал між показами App Open (хв).
+appOpenMinIntervalMinutes=3
+
+# Пауза між повторними спробами завантаження будь-якої реклами (сек).
+retryDelaySeconds=10
+
+
+# ---------- СЕРЕДОВИЩЕ / DEBUG (для тестування) ----------
+# Production — реальні ID з інспектора; Test — офіційні тестові ID
+# (реклама показується гарантовано, з позначкою "Test Ad").
+adEnvironment=Production
+
+# Примусово вважати пристрій ЄС (показує UMP-вікно згоди) — ТІЛЬКИ для тесту!
+debugForceEEA=false
+testDeviceId=8eec3455-dd4b-40b8-8f63-be82a8ec20a6
+
+# Для дітей (0=false, 1=true) — впливає на налаштування згоди UMP.
+tagForUnderAgeOfConsent=false
+
+
+# ---------- ОРІЄНТАЦІЯ ТА БАНЕРИ ----------
+# Примусово перевертати гру в ландшафтну орієнтацію?
+forceLandscapeOrientation=true
+
+# До якого кута екрана кріпити лівий/правий банер:
+#   TopLeft=0, TopRight=1, BottomLeft=2, BottomRight=3
+# (уВАГА: зараз у сцені стоїть 0 і 1 — це ВЕРХНІ кути!)
+leftBannerCorner=TopLeft
+rightBannerCorner=TopRight
+
+
+# ---------- AD UNIT ID (кожен тип окремо для Test і Production) ----------
+# Формат: ca-app-pub-XXXX/YYYY (як у AdMob → Ad units).
+# УВАГА: не плутайте з App ID (ca-app-pub-XXXX~YYYY) — він не працює як unit ID.
+
+# Banner
+bannerIdProd=ca-app-pub-4159866480879841/8852013807
+bannerIdTest=ca-app-pub-3940256099942544/6300978111
+
+# Interstitial (проста міжсторінкова)
+interstitialIdProd=ca-app-pub-4159866480879841/6706719277
+interstitialIdTest=ca-app-pub-3940256099942544/1033173712
+
+# Rewarded (звичайна з нагородою, без інтро-екрана)
+rewardedIdProd=ca-app-pub-4159866480879841/9524723800
+rewardedIdTest=ca-app-pub-3940256099942544/5224354917
+
+# Rewarded Interstitial (з нагородою + інтро-екран "Пропустити")
+rewardedInterstitialIdProd=ca-app-pub-4159866480879841/8931269070
+rewardedInterstitialIdTest=ca-app-pub-3940256099942544/5354046379
+
+# App Open (реклама завантаження)
+appOpenIdProd=ca-app-pub-4159866480879841/2581483147
+appOpenIdTest=ca-app-pub-3940256099942544/9257395921
+
+
+# ---------- ОНОВЛЕННЯ КОНФІГА ----------
+# Якщо > 0 — конфіг перезавантажується кожні N хвилин (зміни на сервері
+# підхопляться БЕЗ перезапуску гри). 0 — лише один раз при старті.
+remoteConfigRefreshMinutes=0
