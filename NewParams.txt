@@ -10,34 +10,24 @@
 # ============================================================
 
 # ---------- СИСТЕМА РЕКЛАМИ ----------
-# Нова система: автоматичний таймер, банери по кутах та інші формати.
 oldSystem=false
 
-# ---------- АВТО-ТАЙМЕР ПОВНОЕКРАННОЇ РЕКЛАМИ ----------
-# Рівно 60 секунд між спробами автоматичного показу.
-minSecondsBetweenAds=45
-maxSecondsBetweenAds=65
-
-# Глобальний мінімальний інтервал між показами реклами.
-ADS_RATE=50
-
-# ---------- REWARDED INTERSTITIAL + ІНТРО ----------
-introScreenSeconds=3
-introRewardText=Watch a short ad to continue!
-introSkipButtonText=Skip
-
 # ---------- ТИП АВТОМАТИЧНОЇ РЕКЛАМИ ----------
-# 90% — звичайна міжсторінкова реклама.
-# 10% — Rewarded Interstitial з інтро-екраном.
+# Лише звичайна міжсторінкова реклама (без нагороди та інтро-екрана).
 interstitialMode=PlainInterstitial
-mixedRewardedChancePercent=0
+
+# ---------- АВТО-ТАЙМЕР МІЖСТОРІНКОВОЇ РЕКЛАМИ ----------
+# Рівно 60 секунд між показами (min = max).
+minSecondsBetweenAds=60
+maxSecondsBetweenAds=60
 
 # ---------- APP OPEN ----------
-# Вимкнено, щоб App Open не показувалась одразу при запуску
-# і не обходила очікування перших 60 секунд.
-showAppOpenOnColdStart=false
-showAppOpenOnResume=false
+# Показується при запуску гри та при поверненні в неї.
+showAppOpenOnColdStart=true
+showAppOpenOnResume=true
+# Скільки секунд чекати завантаження App Open на старті.
 appOpenLoadTimeoutSeconds=5
+# Не частіше, ніж раз на 3 хвилини.
 appOpenMinIntervalMinutes=3
 
 # Пауза між повторними спробами завантаження реклами.
@@ -49,5 +39,4 @@ leftBannerCorner=TopLeft
 rightBannerCorner=TopRight
 
 # ---------- ОНОВЛЕННЯ КОНФІГУ ----------
-# 0 = завантажити лише один раз при старті гри.
 remoteConfigRefreshMinutes=0
