@@ -30,7 +30,7 @@ introSkipButtonText=Skip
 # 90% — звичайна міжсторінкова реклама.
 # 10% — Rewarded Interstitial з інтро-екраном.
 interstitialMode=Mixed
-mixedRewardedChancePercent=99
+mixedRewardedChancePercent=0
 
 # ---------- APP OPEN ----------
 # Вимкнено, щоб App Open не показувалась одразу при запуску
