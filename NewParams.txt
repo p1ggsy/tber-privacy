@@ -15,11 +15,11 @@ oldSystem=false
 
 # ---------- АВТО-ТАЙМЕР ПОВНОЕКРАННОЇ РЕКЛАМИ ----------
 # Рівно 60 секунд між спробами автоматичного показу.
-minSecondsBetweenAds=60
-maxSecondsBetweenAds=60
+minSecondsBetweenAds=45
+maxSecondsBetweenAds=65
 
 # Глобальний мінімальний інтервал між показами реклами.
-ADS_RATE=60
+ADS_RATE=50
 
 # ---------- REWARDED INTERSTITIAL + ІНТРО ----------
 introScreenSeconds=3
@@ -30,7 +30,7 @@ introSkipButtonText=Skip
 # 90% — звичайна міжсторінкова реклама.
 # 10% — Rewarded Interstitial з інтро-екраном.
 interstitialMode=Mixed
-mixedRewardedChancePercent=10
+mixedRewardedChancePercent=99
 
 # ---------- APP OPEN ----------
 # Вимкнено, щоб App Open не показувалась одразу при запуску
