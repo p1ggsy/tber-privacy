@@ -29,7 +29,7 @@ introSkipButtonText=Skip
 # ---------- ТИП АВТОМАТИЧНОЇ РЕКЛАМИ ----------
 # 90% — звичайна міжсторінкова реклама.
 # 10% — Rewarded Interstitial з інтро-екраном.
-interstitialMode=Mixed
+interstitialMode=PlainInterstitial
 mixedRewardedChancePercent=0
 
 # ---------- APP OPEN ----------
