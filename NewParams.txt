@@ -14,13 +14,13 @@ oldSystem=false
 
 # ---------- ТИП АВТОМАТИЧНОЇ РЕКЛАМИ ----------
 # Лише звичайна міжсторінкова реклама (без нагороди та інтро-екрана).
-#interstitialMode=PlainInterstitial
-interstitialMode=RewardedInterstitial
+interstitialMode=PlainInterstitial
 
 # ---------- АВТО-ТАЙМЕР МІЖСТОРІНКОВОЇ РЕКЛАМИ ----------
 # Рівно 60 секунд між показами (min = max).
-minSecondsBetweenAds=30
-maxSecondsBetweenAds=45
+minSecondsBetweenAds=45
+maxSecondsBetweenAds=60
+
 # ---------- APP OPEN ----------
 # Показується при запуску гри та при поверненні в неї.
 showAppOpenOnColdStart=true
