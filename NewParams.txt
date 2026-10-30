@@ -23,7 +23,7 @@ maxSecondsBetweenAds=60
 
 # ---------- APP OPEN ----------
 # Показується при запуску гри та при поверненні в неї.
-showAppOpenOnColdStart=true
+showAppOpenOnColdStart=false
 showAppOpenOnResume=true
 # Скільки секунд чекати завантаження App Open на старті.
 appOpenLoadTimeoutSeconds=5
